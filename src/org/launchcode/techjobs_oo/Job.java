@@ -1,8 +1,7 @@
 package org.launchcode.techjobs_oo;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
+
 
 public class Job {
 
@@ -40,12 +39,42 @@ public class Job {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
-        return getId() == job.getId();
+        return getId() == job.getId() && Objects.equals(getName(), job.getName()) && Objects.equals(getEmployer(), job.getEmployer()) && Objects.equals(getLocation(), job.getLocation()) && Objects.equals(getPositionType(), job.getPositionType()) && Objects.equals(getCoreCompetency(), job.getCoreCompetency());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getId());
+    }
+    // toString Method
+    public String toString() {
+
+        if(getName().equals("")
+        && getEmployer().getValue().equals("")
+        && getLocation().getValue().equals("")
+        && getPositionType().getValue().equals("")
+        && getCoreCompetency().getValue().equals("")) {
+            return "OOPS! This job does not seem to exist.";
+        }
+
+        if(getName().equals("")){
+            this.name = "Data not available";
+            System.out.println(name);
+        }
+        if(getEmployer().equals("")){
+            this.employer = new Employer("Data not available");
+        }
+        if(getLocation().equals("")){
+            this.location = new Location("Data not available");
+        }
+        if(getPositionType().equals("")){
+            this.positionType = new PositionType("Data not available");
+        }
+        if(getCoreCompetency().equals("")){
+            this.coreCompetency = new CoreCompetency("Data not available");
+        }
+
+
     }
 
 
