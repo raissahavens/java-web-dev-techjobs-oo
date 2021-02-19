@@ -32,7 +32,7 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
-    // custom equals and hashcode methods
+    // equals and hashcode methods
 
     @Override
     public boolean equals(Object o) {
@@ -63,16 +63,16 @@ public class Job {
             this.name = "Data not available";
             System.out.println(name);
         }
-        if(getEmployer().equals("")){
+        if(getEmployer().getValue().equals("")){
             this.employer = new Employer("Data not available");
         }
-        if(getLocation().equals("")){
+        if(getLocation().getValue().equals("")){
             this.location = new Location("Data not available");
         }
-        if(getPositionType().equals("")){
+        if(getPositionType().getValue().equals("")){
             this.positionType = new PositionType("Data not available");
         }
-        if(getCoreCompetency().equals("")){
+        if(getCoreCompetency().getValue().equals("")){
             this.coreCompetency = new CoreCompetency("Data not available");
         }
 
