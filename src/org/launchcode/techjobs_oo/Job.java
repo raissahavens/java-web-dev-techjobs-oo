@@ -49,6 +49,8 @@ public class Job {
     // toString Method
     public String toString() {
 
+        String str;
+
         if(getName().equals("")
         && getEmployer().getValue().equals("")
         && getLocation().getValue().equals("")
@@ -74,7 +76,14 @@ public class Job {
             this.coreCompetency = new CoreCompetency("Data not available");
         }
 
+        str = "\nID: " + getId() +
+                "\nName: " + getName() +
+                "\nEmployer: " + getEmployer() +
+                "\nLocation: " + getLocation() +
+                "\nPosition Type: " + getPositionType() +
+                "\nCore Competency: " + getCoreCompetency() + "\n";
 
+        return str;
     }
 
 
